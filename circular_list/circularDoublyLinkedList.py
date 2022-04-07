@@ -15,7 +15,7 @@ class CircularDoublyLinkedList:
             prev = self.getNode(i-1)
             newNode = BidirectNode(newItem, prev, prev.next)
             newNode.next.prev = newNode
-            prev.next = newNodesasd
+            prev.next = newNode
             self.__numItems += 1
         else:
             print("index", i, ": out of bound in insert()") # 필요 시 에러 처리
