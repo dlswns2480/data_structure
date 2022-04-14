@@ -1,4 +1,9 @@
-from list.bidirectNode import BidirectNode
+class BidirectNode:
+    def __init__(self,x,prevNode : 'BidirectNode', nextNode:'BidirectNode'):
+        self.item = x
+        self.prev = prevNode
+        self.next = nextNode
+from bidirectNode import BidirectNode
 
 class CircularDoublyLinkedList:
     """원형 더블리 링크드 리스트"""
@@ -11,7 +16,7 @@ class CircularDoublyLinkedList:
     
     def insert(self, i:int, newItem) -> None:
         """i번째에 새로운 데이터를 삽입하는 메소드"""
-        if (0 <= i <= self.__numItems):
+        if 0 == i :
             prev = self.getNode(i-1)
             newNode = BidirectNode(newItem, prev, prev.next)
             newNode.next.prev = newNode

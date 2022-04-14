@@ -14,10 +14,10 @@ a.append(1)
 list.extend(a)
 list.reverse()
 list.pop(0)
-list.count(1)
+list.count(2)
 
 print("count(3):", list.count(3))
 print("get(2):", list.get(2))
-print("count(1):", list.count(1))
+print("count(2):", list.count(2))
 
 list.printList()
