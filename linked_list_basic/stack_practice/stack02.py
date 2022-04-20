@@ -1,4 +1,4 @@
- 
+
 
 class ListStack:
     def __init__(self):

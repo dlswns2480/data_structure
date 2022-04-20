@@ -25,7 +25,7 @@ def parenBalance(string:str) -> bool:
             pass
 
     if stack.size() != 0:
-        for _ in range(stack.size()):
+        for j in range(stack.size()):
             print("문자열 {} 번째 위치에 있는 괄호가 닫히지 않았습니다".format(stack.pop()))
         balance = False
     

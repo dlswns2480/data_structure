@@ -1,16 +1,27 @@
 from stack03 import *
 
-def check_func():
-    w = input()
-    check_sum = 0
-    check_w = ListStack()
-    for i in w:
-        check_w.push(i)
-    for k in range(len(w) - 1, -1, -1):
-        if w[k] == check_w.pop():
-            check_sum += 1
-    if check_sum == len(w):
-        print("True")
+def reverse_find(string):
+    linkedStack = LinkedStack()
+    index = 0
+    reversed_str = ""
+    front_str = ""
+
+    while string[index] != "$":
+        linkedStack.push(string[index])
+        index += 1
+    
+    for i in range(index+1, len(string)):
+        reversed_str += string[i]
+    linkedStack.printStack()
+    
+    for i in range(index):
+        front_str += linkedStack.pop()
+    
+
+    if front_str == reversed_str:
+        return True
     else:
-        print("False")
-check_func()
+        return False
+    
+
+print(reverse_find("abc$cba"))

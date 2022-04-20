@@ -1,35 +1,33 @@
-class ListStack:
-    """배열 리스트로 구현한 스택 클래스"""
+from linked_list_basic import LinkedListBasic
+class LinkedStack:
+    """연결 리스트로 구현한 스택 클래스"""
     def __init__(self):
-        self.__stack = []
+        self.__list = LinkedListBasic()
+    
+    def push(self, newItem):
+        self.__list.insert(0, newItem)
 
-    def push(self, x):
-        self.__stack.append(x)
-    
     def pop(self):
-        return self.__stack.pop()
-    
+        return self.__list.pop(0)
+
     def top(self):
         if self.isEmpty():
             return None
         else:
-            return self.__stack[-1]
+            return self.__list.get(0)
     
     def isEmpty(self) -> bool:
-        return not bool(self.__stack)   # bool 함수가 False를 반환하는 경우
-                                        # 1. 객체가 비어 있는 경우
-                                        # 2. 객체가 False인 경우
-                                        # 3. 객체의 값이 0인 경우
-                                        # 4. 객체가 None인 경우
+        return self.__list.isEmpty()
     
     def popAll(self):
-        self.__stack.clear()
+        self.__list.clear()
     
     def printStack(self):
         print("Stack from top:", end = ' ')
-        for i in range(len(self.__stack)-1, -1, -1):
-            print(self.__stack[i], end = ' ')
+        for i in range(self.__list.size()):
+            print(self.__list.get(i), end = ' ')
         print()
-
+    
     def size(self):
-        return len(self.__stack)
+        return self.__list.size()
+    
